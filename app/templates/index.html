@@ -2,13 +2,17 @@
 
 {% block content %}
 
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <script src="/static/js/main.js"></script>
 
-    <h2>Homepage</h2>
+    <h2>Homepage HELLO</h2>
 
     <form id="search">
-        <input type="number" name="title" id="title" placeholder="Title (e.g. 35)"> U.S.C. &sect; <input type="number" name="section" id="section" placeholder="Section (e.g. 1, 5-9)">
+        <input type="text" name="title" class="validate" id="title" placeholder="Title (e.g. 35)"> U.S.C. &sect; <input type="text" name="section" class="validate" id="section" placeholder="Section (e.g., 1, 5-7)"><br>
+        Compare from <input type="text" name="startYear" class="year-input validate" id="startYear" placeholder="1994 onwards"> to <input type="text" name="endYear" class="year-input validate" id="endYear" value="2016">
         <input type="submit" value="Compare" id="comp-btn">
     </form>
+
+    <div id="error"></div>
 
 {% endblock %}
