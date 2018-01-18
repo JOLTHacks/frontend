@@ -13,7 +13,7 @@ def diff(title, section, startYear, endYear):
     diffs = []
     for s in section.split('+'):
         #todo parameterize url for requests, figure out how more complicated nested sections look
-        diffs.append(requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear)))
+        #diffs.append(requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear)))
     return render_template("diff.html", title=title, section=section, startYear=startYear, endYear=endYear, diffs=diffs)
 
 def getDiffRequestStruct(title, section, startYear, endYear):
