@@ -1,3 +1,11 @@
-.year-input {
-    width:110px;
+label {
+	display:none;
+}
+
+#search-form {
+	text-align:center;
+}
+
+#error {
+	text-align: center;
 }

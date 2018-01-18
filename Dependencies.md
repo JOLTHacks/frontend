@@ -25,3 +25,7 @@ License: https://github.com/less/less-docs/blob/master/LICENSE-MIT
 Node.js
 
 License: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
+
+Materialize CSS
+
+License: https://github.com/Dogfalo/materialize/blob/master/LICENSE

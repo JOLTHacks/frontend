@@ -2,18 +2,31 @@
 
 {% block content %}
 
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-    <script src="/static/js/allSections.js"></script>
-    <script src="/static/js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<script src="/static/js/allSections.js"></script>
+	<script src="/static/js/main.js"></script>
 
-    <h2>Homepage HELLO</h2>
+	<h2>Homepage</h2>
 
-    <form id="search">
-        <input type="text" name="title" class="validate" id="title" placeholder="Title (e.g. 35)"> U.S.C. &sect; <input type="text" name="section" class="validate" id="section" placeholder="Section (e.g., 1, 5-7)"><br>
-        Compare from <input type="text" name="startYear" class="year-input validate" id="startYear" placeholder="1994 onwards"> to <input type="text" name="endYear" class="year-input validate" id="endYear" value="2016">
-        <input type="submit" value="Compare" id="comp-btn">
-    </form>
+	<div id="search-form">
+		<form id="search">
+			<!-- labels will be invisible...they're for screen readers & accessibility -->
+			<label for="title">Title:</label>
+			<input type="text" name="title" class="validate" id="title" placeholder="Title (e.g. 18)">
+			 U.S.C. &sect; 
+			<label for="section">Section (comma separated ranges, e.g., 1, 5-7):</label>
+			<input type="text" name="section" class="validate" id="section" placeholder="Section (e.g., 1, 5-7)">
+			<br>
+			Compare from 
+			<label for="startYear">Start Year (1994 onwards):</label>
+			<input type="text" name="startYear" class="year-input validate" id="startYear" placeholder="1994 onwards">
+			 to 
+			<label for="endYear">End Year (2016 default):</label>
+			<input type="text" name="endYear" class="year-input validate" id="endYear" value="2016">
+			<input type="submit" value="Compare" id="comp-btn">
+		</form>
+	</div>
 
-    <div id="error"></div>
+	<div id="error"></div>
 
 {% endblock %}
