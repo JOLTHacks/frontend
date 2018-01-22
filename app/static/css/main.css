@@ -4,6 +4,9 @@ label {
 
 #search-form {
 	text-align:center;
+	border-radius: 3px;
+	background-color: rgba(67, 176, 242, 0.1);
+	padding: 10px;
 }
 
 #error {

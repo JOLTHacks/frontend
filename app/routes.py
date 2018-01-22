@@ -4,6 +4,8 @@ from string import Template
 import requests, urllib2
 import json
 
+TESTING_ONE_SERVER_ONLY = True
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -13,10 +15,22 @@ def index():
 def diff(title, section, startYear, endYear):
     diffs = []
     for s in section.split('+'):
-        #todo parameterize url for requests, figure out how more complicated nested sections look coming in from the route
-        r = requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear))
-        o = json.loads(r.text)
-        diffs.append(generateDiffContent(r.text))
+        if (not TESTING_ONE_SERVER_ONLY):
+            #todo parameterize url for requests, figure out how more complicated nested sections look coming in from the route
+            r = requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear))
+            o = json.loads(r.text)
+            diffs.append(generateDiffContent(r.text))
+        else:
+            diffs = [
+              {
+                "original": "this is original text",
+                "diff": "this is diff text"
+              },
+              {
+                "original": "2this is original text2",
+                "diff": "2this is diff text2"
+              }
+            ]
     return render_template("diff.html", title=title, section=section, startYear=startYear, endYear=endYear, diffs=diffs)
 
 def getDiffRequestStruct(title, section, startYear, endYear):

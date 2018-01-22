@@ -1,4 +1,4 @@
-Bootstrap v3.3.7
+Bootstrap v4.0
 
 License: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
@@ -12,7 +12,7 @@ https://codepen.io/aanjulena/full/ZLZjzV/
 
 Python 3
 
-License: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release 
+License: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release
 
 Flask
 

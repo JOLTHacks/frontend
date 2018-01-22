@@ -8,21 +8,49 @@
 
 	<h2>Homepage</h2>
 
-	<div id="search-form">
+	<div class="container" id="search-form">
 		<form id="search">
 			<!-- labels will be invisible...they're for screen readers & accessibility -->
-			<label for="title">Title:</label>
-			<input type="text" name="title" class="validate" id="title" placeholder="Title (e.g. 18)">
-			 U.S.C. &sect; 
-			<label for="section">Section (comma separated ranges, e.g., 1, 5-7):</label>
-			<input type="text" name="section" class="validate" id="section" placeholder="Section (e.g., 1, 5-7)">
-			<br>
-			Compare from 
-			<label for="startYear">Start Year (1994 onwards):</label>
-			<input type="text" name="startYear" class="year-input validate" id="startYear" placeholder="1994 onwards">
-			 to 
-			<label for="endYear">End Year (2016 default):</label>
-			<input type="text" name="endYear" class="year-input validate" id="endYear" value="2016">
+			<div class="row mb-3">
+				<div class="col-sm-6">
+					<div class="input-group">
+						<label for="title">Title:</label>
+						<input type="text" name="title" class="form-control validate" id="title" placeholder="Title (e.g. 18)">
+						<div class="input-group-append">
+							<span class="input-group-text">U.S.C.</span>
+						</div>
+					</div>
+				 </div>
+				 <div class="col-sm-6">
+					 <div class="input-group">
+						 <div class="input-group-prepend">
+							 <span class="input-group-text">&sect;</span>
+						 </div>
+						<label for="section">Section (comma separated ranges, e.g., 1, 5-7):</label>
+						<input type="text" name="section" class="form-control validate" id="section" placeholder="Section (e.g., 1, 5-7)">
+					</div>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-sm-6">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Compare from</span>
+						</div>
+						<label for="startYear">Start Year (1994 onwards):</label>
+						<input type="text" name="startYear" class="form-control year-input validate" id="startYear" placeholder="1994 onwards">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">to</span>
+						</div>
+						<label for="endYear">End Year (2016 default):</label>
+						<input type="text" name="endYear" class="form-control year-input validate" id="endYear" value="2016">
+					</div>
+				</div>
+			</div>
 			<input type="submit" value="Compare" id="comp-btn">
 		</form>
 	</div>

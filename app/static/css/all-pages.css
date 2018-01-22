@@ -2,7 +2,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-input {
+/*input {
 	border-radius: 3px;
 	border-style: solid;
 	border-width: .9px;
@@ -10,9 +10,13 @@ input {
 	margin-top: 3px;
 	margin-bottom: 3px;
 	padding-left: 3px;
-}
+}*/
 
 .bad-form {
 	border-width: 1.4px;
 	border-color: #da0000;
+}
+
+form {
+	margin: 0;
 }
