@@ -2,7 +2,7 @@
 // var titles = API.getTitles();
 
 // these are some dummy values
-var titles = [18];
+var titles = [1, 18]; // TODO read from allSections.js
 // string version to be used in the error message
 var titleString = "";
 
@@ -17,7 +17,7 @@ if (titles.length == 1) {
 			titleString = titleString + "and " + title.toString();
 		} else {
 			titleString = titleString + title.toString() + ", ";
-		}        
+		}
 	})
 }
 
@@ -51,9 +51,9 @@ $(document).ready(function() {
 		check(event);
 	});
 
-	// this is the beautiful check function 
+	// this is the beautiful check function
 	function check(event) {
-		
+
 		// these variables must be true to submit the form
 		var titleGood = false;
 		var sectionGood = false;
@@ -118,7 +118,7 @@ $(document).ready(function() {
 
 				// now figure out what kind of error it is to throw the right error message
 				// we only throw one error message at a time... most specific one first
-				// we set that particular error to true and at the end we display all the true errors 
+				// we set that particular error to true and at the end we display all the true errors
 
 				if (!Number.isInteger(titleNum)) {
 					// error 1: entry not even an integer
@@ -130,7 +130,7 @@ $(document).ready(function() {
 					// error 3: we don't support this title (it's an int and it's in the code, but we don't diff it)
 					errors.titleErrors.notFound.status = true;
 				}
-			}            
+			}
 		}
 
 		// SECTION INPUT VALIDATION
@@ -140,7 +140,7 @@ $(document).ready(function() {
 			$.each(errors.sectionErrors, function (i, error) {
 				error.status = false;
 			})
-			
+
 			// to check if section in title, title needs to be filled in first so we validate that
 			$("#title").focusout();
 
@@ -150,13 +150,30 @@ $(document).ready(function() {
 			var ranges = section.split(",");
 
 			// separately validate all given ranges
-			$.each(ranges, function (i, range) {
+			$.each(ranges, function (j, range) {
 
 				// trim whitespace again: "3, 4"
 				range = $.trim(range);
 
 				// split on various terrible dashes: "4-5"
 				var vals = range.split(/[-‒–—―⁓~]/);
+				if (vals.length > 2) {
+					var tempVals = []
+					for (var k = 0; k < vals.length - 1; k++) {
+						var checkSection = vals[k] + '-' + vals[k+1];
+						if (sectionInTitle(titleNum, checkSection) !== -1) {
+							tempVals.push(checkSection);
+							k += 1;
+						}
+						else {
+							tempVals.push(vals[k]);
+						}
+					}
+					if ($.inArray(vals[vals.length - 2] + '-' + vals[vals.length - 1], tempVals) == -1) {
+						tempVals.push(vals[vals.length - 1]);
+					}
+					vals = tempVals;
+				}
 
 				// iterate over all sets of ranges: "3" and "4-5"
 				$.each(vals, function (i, val) {
@@ -270,7 +287,7 @@ $(document).ready(function() {
 
 			// this is the same terrible if statement as in start year (read comment above) with 2 changes:
 			// we check that EITHER:
-				// end year > start year OR 
+				// end year > start year OR
 				// end year is our range max (2016 at the time of this writing) OR
 				// there is no start year filled in yet (in which case we'll throw an error in the start year box but not here)
 
