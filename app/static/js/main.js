@@ -2,7 +2,11 @@
 // var titles = API.getTitles();
 
 // these are some dummy values
-var titles = [1, 18]; // TODO read from allSections.js
+var titles = Object.keys(allSections);
+$.each(titles, function(i, title) {
+	titles[i] = parseInt(title);
+});
+
 // string version to be used in the error message
 var titleString = "";
 
@@ -202,7 +206,13 @@ $(document).ready(function() {
 							var endPlace = sectionInTitle(titleNum, rangeEnd);
 
 							// add everything between the two range endpoints to the "to diff" set
-							var addRange = allSections[titleNum].slice(startPlace+1, endPlace+1);
+							var addRange = []
+							if (startPlace <= endPlace){
+								addRange = allSections[titleNum].slice(startPlace+1, endPlace+1);
+							}
+							else {
+								var addRange = allSections[titleNum].slice(endPlace+1, startPlace+1);
+							}
 
 							toDiff = toDiff.concat(addRange);
 						} else {
@@ -348,7 +358,7 @@ $(document).ready(function() {
 			"notFound": {
 				"status": false,
 				// TODO use the list of titles we actually support
-				"message": "We currently support the following titles: " + titleString + ". Sorry!"
+				"message": "We currently support the following title(s): " + titleString + ". Sorry!"
 			},
 			"notCode": {
 				"status": false,
