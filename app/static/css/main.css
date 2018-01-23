@@ -4,11 +4,87 @@ label {
 
 #search-form {
 	text-align:center;
-	border-radius: 3px;
-	background-color: rgba(67, 176, 242, 0.1);
-	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(236, 247, 254, 0.95);
+	border-color: #191970;
+	border-width: 1px;
+	border-style: solid;
+	padding: 40 50 40 50;
+	position: absolute;
+	top: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }
 
 #error {
 	text-align: center;
+}
+
+#error p {
+	margin-bottom: .5rem;
+}
+
+#top-box {
+	position: relative;
+}
+
+#title-box {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	background: transparent;
+	color: white;
+	text-align: center;
+	width: 100%;
+	top: 30%;
+}
+
+.header {
+	position: absolute;
+	z-index: 2;
+	/* display: block; */
+	background: transparent;
+	top: 5%;
+	width: 100%;
+}
+
+.logo {
+	height: 50px;
+	display: block;
+	text-align: center;
+}
+
+.about-link {
+	text-align: center;
+}
+
+.jolt-logo--grey {
+	fill:#fff
+}
+
+.jolt-logo--blue,
+.jolt-logo--teal {
+	fill:#43b0f2
+}
+
+.jolt-logo--yellow {
+	fill:#fc0
+}
+
+.angle {
+	height: 80%;
+}
+
+#angle-image {
+	background-image: url('/static/img/Circuit.png');
+	background-color: #191970;
+	background-size: 400px;
+	width: 1224px;
+	height: 512px;
+	background-position: 0 0;
+}
+@media (min-width: 1440px) {
+	#angle-image { background-size: 300px; }
 }

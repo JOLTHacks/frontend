@@ -2,16 +2,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-/*input {
-	border-radius: 3px;
-	border-style: solid;
-	border-width: .9px;
-	height: 25;
-	margin-top: 3px;
-	margin-bottom: 3px;
-	padding-left: 3px;
-}*/
-
 .bad-form {
 	border-width: 1.4px;
 	border-color: #da0000;
@@ -19,4 +9,63 @@ body {
 
 form {
 	margin: 0;
+}
+
+.small-pad {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.btn-primary {
+	background-color: #191970;
+	border-color: #191970;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+	background-color: #14145b;
+	border-color: #101046;
+}
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary.active {
+	background-color: #191970;
+	border-color: #191970;
+}
+
+.btn-secondary {
+	background-color: #fc0;
+	border-color: #fc0;
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+	background-color: #e6b800;
+	border-color: #cca300;
+}
+.btn-secondary.disabled:hover,
+.btn-secondary.disabled:focus,
+.btn-secondary.disabled:active,
+.btn-secondary.disabled.active,
+.btn-secondary[disabled]:hover,
+.btn-secondary[disabled]:focus,
+.btn-secondary[disabled]:active,
+.btn-secondary[disabled].active,
+fieldset[disabled] .btn-secondary:hover,
+fieldset[disabled] .btn-secondary:focus,
+fieldset[disabled] .btn-secondary:active,
+fieldset[disabled] .btn-secondary.active {
+	background-color: #fc0;
+	border-color: #fc0;
 }

@@ -1,7 +1,4 @@
-// get list of supported titles from the backend API
-// var titles = API.getTitles();
-
-// these are some dummy values
+// get list of supported titles from the allSections file
 var titles = Object.keys(allSections);
 $.each(titles, function(i, title) {
 	titles[i] = parseInt(title);
@@ -327,7 +324,7 @@ $(document).ready(function() {
 		$.each(errors, function(i, errorGroup) {
 			$.each(errorGroup, function (j, error) {
 				if (error.status) {
-					$("#error").append(error.message + "<br>");
+					$("#error").append("<p>" + error.message + "</p>");
 				}
 			})
 		})
