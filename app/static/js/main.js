@@ -74,7 +74,12 @@ $(document).ready(function() {
 		endYear = $("#endYear")[0].value;
 
 		// parse the title entry to an actual number
-		titleNum = parseFloat(title);
+		if (!isNaN(title)) {
+			titleNum = parseFloat(title);
+		} else {
+			titleNum = title;
+		}
+
 
 		// get the actual numeric values entered for the years
 		startYearNum = parseFloat(startYear);
@@ -192,7 +197,9 @@ $(document).ready(function() {
 
 						// if only one number, add to our set of sections
 						if (i == 0) {
-							toDiff.push(val);
+							if ($.inArray(val, toDiff) === -1) {
+								toDiff.push(val);
+							}
 						} else if (i == 1) {
 							// if multiple numbers, get the first and second numbers in the range
 							var rangeStart = vals[0];
@@ -208,18 +215,22 @@ $(document).ready(function() {
 								addRange = allSections[titleNum].slice(startPlace+1, endPlace+1);
 							}
 							else {
-								var addRange = allSections[titleNum].slice(endPlace+1, startPlace+1);
+								addRange = allSections[titleNum].slice(endPlace+1, startPlace+1);
 							}
 
-							toDiff = toDiff.concat(addRange);
-						} else {
-							// error so red
-							$("#section").addClass("bad-form");;
+							$.each(addRange, function (i, r) {
+								if ($.inArray(r, toDiff) === -1) {
+									toDiff.push(r);
+								}
+							})
 
+						} else {
+							// error: there are too many dashes in this range
+							$("#section").addClass("bad-form");
 							errors.sectionErrors.dashError.status = true;
 						}
 
-						if (toDiff.length <= DIFF_MAX) {
+						if (toDiff.length <= DIFF_MAX) { // user can only enter a limited number of sections to diff
 							sectionGood = true;
 						} else {
 							// error so red
