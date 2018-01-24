@@ -163,7 +163,7 @@ $(document).ready(function() {
 
 				// split on various terrible dashes: "4-5"
 				var vals = range.split(/[-‒–—―⁓~]/);
-				if (vals.length > 2) {
+				if (vals.length > 1) {
 					var tempVals = []
 					for (var k = 0; k < vals.length - 1; k++) {
 						var checkSection = vals[k] + '-' + vals[k+1];
