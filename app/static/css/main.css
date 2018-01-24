@@ -44,10 +44,10 @@ label {
 .header {
 	position: absolute;
 	z-index: 2;
-	/* display: block; */
 	background: transparent;
-	top: 5%;
+	top: 10px;
 	width: 100%;
+	padding: 0 10px;
 }
 
 .logo {
@@ -56,8 +56,47 @@ label {
 	text-align: center;
 }
 
-.about-link {
-	text-align: center;
+.about-link a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: .3s all linear;
+  transition: .3s all linear;
+  position: relative;
+  padding: .5em 0;
+}
+.about-link a:before, .about-link a:after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: #fc0;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+.about-link a:before {
+  left: 50%;
+}
+.about-link a:after {
+  right: 50%;
+}
+.about-link a:hover {
+  color: #fc0;
+}
+.about-link a:hover:before, .about-link a:hover:after {
+  width: 100%;
+}
+.about-link a:hover:before {
+  left: 0%;
+}
+.about-link a:hover:after {
+  right: 0%;
+}
+.about-link a:active, .about-link a:focus {
+  color: #fc0;
+}
+.about-link a:active:before, .about-link a:active:after, .about-link a:focus:before, .about-link a:focus:after {
+  background: #fc0;
 }
 
 .jolt-logo--grey {
