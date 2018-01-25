@@ -1,0 +1,50 @@
+header{background-image: url('/static/img/Circuit.png');
+	background-color: #191970;
+    background-size: 400px;
+    width:100%;
+    margin-bottom: 30;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    transition: all linear 0.3s;}
+
+.header-container {
+    width:90%;
+    margin-right:auto;margin-left:auto;padding:20;
+    display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;
+}
+
+@media screen and (max-width:1024px){.header-container{box-sizing:border-box}}
+
+@media screen and (max-width:768px){.header-container{display:block}}
+
+.jolt-logo-box{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+
+@media screen and (max-width:1024px){.jolt-logo-box{-ms-flex-wrap:wrap;flex-wrap:wrap}.jolt-logo-box:before{content:"";width:100%;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}
+
+@media screen and (max-width:768px){.jolt-logo-box{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}
+
+@media screen and (max-width:768px){.about-link{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:.3em}
+.about-link a:before, .about-link a:after {bottom: 3;}}
+
+.jolt-logo{display:block;height:50px;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    transition: all linear 0.3s;}
+
+@media screen and (max-width:768px){.jolt-logo{height:40px}}
+
+.shrink .jolt-logo{
+    height: 35px;
+}
+
+@media screen and (max-width:768px){.shrink .header-container{padding:12px;}}
+
+@media screen and (max-width:768px){.shrink .jolt-logo{height:28px}}
+
+.shrink .about-link{
+    font-size: .9rem;
+}

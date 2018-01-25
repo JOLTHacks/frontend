@@ -1,0 +1,19 @@
+body {
+	background-color: rgba(236, 247, 254, 0.95);
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.about-text {
+	background-color: white;
+	border-color: #191970;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 20 40 4 40;
+	position: relative;
+	top: 5%;
+	margin-bottom: 30px;
+}

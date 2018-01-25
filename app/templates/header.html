@@ -1,0 +1,18 @@
+{% from 'jolt-logo.html' import logo %}
+
+{% macro header() %}
+<link rel="stylesheet" type="text/css" href="/static/css/header.css">
+<script src="/static/js/header.js"></script>
+
+<header>
+    <div class="header-container">
+        <div class="jolt-logo-box">
+            {{ logo() }}
+        </div>
+        <div class="about-link">
+            <a href="/about">ABOUT</a>
+        </div>
+    </div>
+
+</header>
+{% endmacro %}

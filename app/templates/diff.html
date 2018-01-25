@@ -1,15 +1,26 @@
 {% extends "base.html" %}
-
+{% from 'jolt-logo.html' import logo %} {% from 'header.html' import header %}
 {% block content %}
-    <!-- toggle switch -->
-    <!-- TODO switch off/on to icons corresponding to one view or side by side -->
-    <button type="button" class="btn btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-        <div class="handle"></div>
-    </button>
 
-    <h2>{{ title}} USC &sect; {{ section }} from {{ startYear }} to {{ endYear }}</h2>
+<link rel="stylesheet" type="text/css" href="/static/css/diff.css">
 
-    {% for content in diffs %}
-    	<div> Original: {{ content['original'] }} Diff: {{ content['diff']}} </div>
-    {% endfor %}
+{{ header() }}
+
+<div class="main">
+	<!-- toggle switch -->
+	<!-- TODO switch off/on to icons corresponding to one view or side by side -->
+	<button type="button" class="btn btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+		<div class="handle"></div>
+	</button>
+
+	<h2>{{ title}} USC &sect; {{ section }} from {{ startYear }} to {{ endYear }}</h2>
+
+	{% for content in diffs %}
+		<div> Original: {{ content['original'] }} Diff: {{ content['diff']}} </div>
+	{% endfor %}
+
+	<div id="scroll-test"></div>
+</div>
+
+
 {% endblock %}
