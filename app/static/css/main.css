@@ -26,10 +26,6 @@ label {
 	margin-bottom: .5rem;
 }
 
-#top-box {
-	position: relative;
-}
-
 #title-box {
 	position: absolute;
 	z-index: 2;
@@ -39,21 +35,6 @@ label {
 	text-align: center;
 	width: 100%;
 	top: 30%;
-}
-
-.header {
-	position: absolute;
-	z-index: 2;
-	background: transparent;
-	top: 10px;
-	width: 100%;
-	padding: 0 10px;
-}
-
-.logo {
-	height: 50px;
-	display: block;
-	text-align: center;
 }
 
 .about-link a {
@@ -97,19 +78,6 @@ label {
 }
 .about-link a:active:before, .about-link a:active:after, .about-link a:focus:before, .about-link a:focus:after {
   background: #fc0;
-}
-
-.jolt-logo--grey {
-	fill:#fff
-}
-
-.jolt-logo--blue,
-.jolt-logo--teal {
-	fill:#43b0f2
-}
-
-.jolt-logo--yellow {
-	fill:#fc0
 }
 
 .angle {

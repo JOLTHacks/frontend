@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect
 from app import app
 from string import Template
-import requests, urllib2
+import requests
 import json
 
 TESTING_ONE_SERVER_ONLY = True
