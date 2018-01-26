@@ -249,6 +249,8 @@ $(document).ready(function() {
 							errors.sectionErrors.dashError.status = true;
 						} else if (section.length == 0) {
 							errors.sectionErrors.failure.status = true;
+						} else if (val.includes("(") || val.includes(")")) {
+							errors.sectionErrors.subsection.status = true;
 						} else if (sectionInTitle(titleNum, val) == -1) {
 							errors.sectionErrors.notFound.status = true;
 						} else {
@@ -393,6 +395,10 @@ $(document).ready(function() {
 			"failure": {
 				"status": false,
 				"message": "Please enter a valid section from this title of the US Code."
+			},
+			"subsection" : {
+				"status": false,
+				"message": "Please enter a valid section, not a subsection."
 			}
 		},
 		"startYearErrors": {

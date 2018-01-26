@@ -1,6 +1,6 @@
 {% from 'jolt-logo.html' import logo %}
 
-{% macro header() %}
+{% macro header(calling_page) %}
 <link rel="stylesheet" type="text/css" href="/static/css/header.css">
 <script src="/static/js/header.js"></script>
 
@@ -10,7 +10,11 @@
             {{ logo() }}
         </div>
         <div class="about-link">
-            <a href="/about">ABOUT</a>
+            {% if calling_page == 'ABOUT' %}
+              <a href="/">U.S.deCode</a>
+            {% else %}
+              <a href="/">U.S.deCode</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about">ABOUT</a>
+            {% endif %}
         </div>
     </div>
 
