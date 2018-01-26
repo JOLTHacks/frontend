@@ -331,13 +331,13 @@ $(document).ready(function() {
 		}
 
 		// we clear out the div which displays errors
-		$("#error").empty();
+		$(".error").empty();
 
 		// and now we iterate over all possible errors and display all the ones that were flagged
 		$.each(errors, function(i, errorGroup) {
 			$.each(errorGroup, function (j, error) {
 				if (error.status) {
-					$("#error").append("<p>" + error.message + "</p>");
+					$(errorGroup.errorLoc).append("<p>" + error.message + "</p>");
 				}
 			})
 		})
@@ -361,6 +361,7 @@ $(document).ready(function() {
 	// each error has a "status" (i.e. is the error thrown) and what custom message to display
 	var errors = {
 		"titleErrors": {
+			"errorLoc": "#title-error",
 			"notInt": {
 				"status": false,
 				"message": "Please enter a <a href='https://en.wikipedia.org/wiki/United_States_Code#Titles'>valid US Code Title</a>."
@@ -376,6 +377,7 @@ $(document).ready(function() {
 			}
 		},
 		"sectionErrors": {
+			"errorLoc": "#section-error",
 			"tooMany": {
 				"status": false,
 				"message": "We currently support comparing up to " + DIFF_MAX + " sections at a time. Sorry!"
@@ -402,6 +404,7 @@ $(document).ready(function() {
 			}
 		},
 		"startYearErrors": {
+			"errorLoc": "#startYear-error",
 			"notInt": {
 				"status": false,
 				"message": "Please enter a number between " + MIN_YEAR + " and " + (MAX_YEAR - 1) + " for the start year."
@@ -412,6 +415,7 @@ $(document).ready(function() {
 			}
 		},
 		"endYearErrors": {
+			"errorLoc": "#endYear-error",
 			"notInt": {
 				"status": false,
 				"message": "Please enter a number between " + (MIN_YEAR + 1) + " and " + MAX_YEAR + " for the end year."

@@ -3,11 +3,6 @@ body {
 	transition: all linear 0.15s ease-in-out;
 }
 
-.bad-form {
-	border-width: 1.4px;
-	border-color: #da0000;
-}
-
 form {
 	margin: 0;
 }
