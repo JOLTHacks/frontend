@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGC,YAAO;EACN,gBAAgB,EAAE,WAAW;EAC7B,oCAAyC;IAF1C,YAAO;MAGL,GAAG,ECDY,IAA0B;EDG1C,oCAAyC;IAL1C,YAAO;MAML,GAAG,ECDc,IAA8B;EDGhD,8BAAkB;IACjB,WAAW,ECLE,IAAI;IDMjB,cAAc,ECND,IAAI;;ADYnB,oCAAyC;EAD1C,gBAAiB;IAEf,GAAG,ECZe,IAA8B;ADcjD,oCAAyC;EAJ1C,gBAAiB;IAKf,GAAG,ECXc,IAA6B",
+"sources": ["diff.scss","header-constants.scss"],
+"names": [],
+"file": "diff.css"
+}
