@@ -1,0 +1,97 @@
+@import 'header-constants';
+
+header {
+    width:100%;
+    position: sticky;
+    z-index: 999;
+    left: 0;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s; 
+    transition: all linear 0.3s;
+
+    &#nav {
+      background-image: url('/static/img/Circuit.png');
+  	  background-color: #191970;
+      background-size: 400px;
+      top: 0;
+    }
+
+}
+
+.header-container {
+    width:90%;
+    margin-right:auto;
+    margin-left:auto;
+    padding:$big-padding;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+
+.logo-box{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
+
+.logo{display:block;height:$big-logo;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    transition: all linear 0.3s;}
+
+#hacks-logo {
+    margin-right:15px;
+}
+
+.shrink {
+  .logo{
+      height: $small-logo;
+  }
+  .header-container {
+      padding-top: $small-padding;
+      padding-bottom: $small-padding;
+  }
+}
+
+@media screen and (max-width:$screen-big){
+  .header-container{
+    box-sizing:border-box
+  }
+  .logo-box{
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap
+    &:before {
+      content:"";
+      width:100%;
+      -webkit-box-ordinal-group:2;
+      -ms-flex-order:1;
+      order:1
+    }
+  }
+}
+
+@media screen and (max-width:$screen-med){
+  .header-container {
+    padding-top: $small-padding;
+    padding-bottom: $small-padding;
+  }
+  .about-link{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+  }
+  .logo{
+    height:$small-logo;
+  }
+  .shrink {
+    .header-container{
+      padding-top: $tiny-padding;
+      padding-bottom: $tiny-padding;
+    }
+    .logo{
+      height:$tiny-logo;
+    }
+  }
+}

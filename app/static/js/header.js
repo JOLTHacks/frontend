@@ -2,10 +2,10 @@ $(function(){
 	var shrinkHeader = 100;
 	 $(window).scroll(function() {
 	   var scroll = getCurrentScroll();
-		 if ( scroll >= shrinkHeader ) {
+		 if ( scroll >= shrinkHeader + 25 ) {
 			  $('#nav').addClass('shrink');
 		   }
-		   else {
+		   else if ( scroll < shrinkHeader - 25 ) {
 			   $('#nav').removeClass('shrink');
 		   }
 	 });

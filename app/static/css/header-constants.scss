@@ -1,0 +1,13 @@
+$screen-big: 1024px;
+$screen-med: 768px;
+
+$big-logo: 50px;
+$big-padding: 20px;
+$nav-big-height: ($big-logo + 2*$big-padding);
+$small-logo: 40px;
+$small-padding: 10px;
+$nav-small-height: ($small-logo + 2*$small-padding);
+$tiny-logo: 27px;
+$tiny-about: 40px;
+$tiny-padding: 6px;
+$nav-tiny-height: ($tiny-about + 2*$tiny-padding); 

@@ -1,0 +1,26 @@
+@import 'header-constants';
+
+header {
+	&#tools{
+		background-color: greenyellow;
+		@media screen and (min-width:$screen-med){
+			top: $nav-big-height;
+		}
+		@media screen and (max-width:$screen-med){
+			top:$nav-small-height;
+		}
+		.header-container {
+			padding-top: $small-padding;
+			padding-bottom: $small-padding;
+		}
+	}
+}
+
+.shrink + #tools {
+	@media screen and (min-width:$screen-med){
+		top: $nav-small-height;
+	}
+	@media screen and (max-width:$screen-med){
+		top:$nav-tiny-height;
+	}
+}
