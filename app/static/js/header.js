@@ -3,10 +3,10 @@ $(function(){
 	 $(window).scroll(function() {
 	   var scroll = getCurrentScroll();
 		 if ( scroll >= shrinkHeader ) {
-			  $('header').addClass('shrink');
+			  $('#nav').addClass('shrink');
 		   }
 		   else {
-			   $('header').removeClass('shrink');
+			   $('#nav').removeClass('shrink');
 		   }
 	 });
    function getCurrentScroll() {

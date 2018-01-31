@@ -1,19 +1,31 @@
-{% from 'jolt-logo.html' import logo %}
-
 {% macro header(calling_page) %}
 <link rel="stylesheet" type="text/css" href="/static/css/header.css">
 <script src="/static/js/header.js"></script>
 
-<header>
+<header id="nav">
     <div class="header-container">
-        <div class="jolt-logo-box">
-            {{ logo() }}
+        <div class="logo-box">
+            <a href="/" alt="Home">
+                <img class="logo" id="hacks-logo" src="/static/img/daniel.png"/>
+            </a>
+            <a href="http://jolt.law.harvard.edu/" alt="JOLT">
+                <svg version="1.1" class="logo" data-name="jolt-logo" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
+                    <path fill="#FFCD05" d="M338.567,294.27c0,0-15.519,9.016-28.136,9.016c-12.61,0-24.212-4-37.433-16.602
+                	c-13.222-12.618-29.624-28.839-29.624-28.839s19.072-19.121,28.021-91.706c1.504-12.139,6.677-16.684,10.907-16.915
+                	c2.496-0.132,4.867-1.314,4.867-1.314l-0.049-4.718H235.55v8.461h4.627c0,0,19.897-2.198,20.519,10.205
+                	c0.569,12.379,0.09,60.777-22.353,91.408L114.608,129.409c0,0-25.422-24.98-25.422-44.208c0-19.225,10.622-31.748,33.644-31.748
+                	c23.018,0,52.86,13.581,69.271,38.97h4.463L185.441,62.98c0,0-24.17-16.746-56.897-16.746c-59.488,0-57.67,46.94-57.67,48.907
+                	c0,0-2.392,19.567,18.312,47.373c0,0-68.478,9.585-68.478,79.865c0,19.047,11.23,91.317,110.719,91.317
+                	c0,0,51.877,3.801,94.306-34.449c0,0,29.054,34.557,63.677,34.557c34.647,0,50.868-16.915,50.868-16.915L338.567,294.27z
+                	 M155.408,300.401c-72.829,0-113.868-60.579-113.868-97.623c0,0-4.611-43.853,53.459-54.257c0,0,11.924,16.7,125.139,124.825
+                	C220.139,273.347,199.571,300.401,155.408,300.401" />
+                </svg>
+            </a>
         </div>
         <div class="about-link">
-            {% if calling_page == 'ABOUT' %}
-              <a href="/">U.S.deCode</a>
-            {% else %}
-              <a href="/">U.S.deCode</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about">ABOUT</a>
+            {% if calling_page != 'ABOUT' %}
+                <a href="/about">ABOUT</a>
             {% endif %}
         </div>
     </div>

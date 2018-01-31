@@ -3,8 +3,20 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="/static/css/diff.css">
+<script src="/static/js/diff.js"></script>
 
 {{ header() }}
+
+<header id="tools">
+	<div class="header-container">
+		<div>
+			from {{ startYear }} to {{ endYear }}
+		</div>
+		<div>
+			TOGGLES
+		</div>
+	</div>
+</header>
 
 <div class="main">
 	<!-- toggle switch -->
@@ -13,7 +25,7 @@
 		<div class="handle"></div>
 	</button>
 
-	<h1>{{ title}} USC &sect; {{ section }} from {{ startYear }} to {{ endYear }}</h1>
+	<h1>{{ title}} USC &sect; {{ section }} </h1>
 
 	{% for content in diffs %}
 		<div> Original: {{ content['original'] }} Diff: {{ content['diff']}} </div>
