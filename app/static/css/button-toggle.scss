@@ -1,0 +1,120 @@
+@import "colors";
+
+$toggle-time: .25s;
+
+@mixin label-fade($side, $opacity) {
+	opacity: $opacity;
+
+	@if $opacity == 1 {
+		-webkit-transition: $side $toggle-time, opacity $toggle-time ($toggle-time / 3);
+		-moz-transition: $side $toggle-time, opacity $toggle-time ($toggle-time / 3);
+		transition: $side $toggle-time, opacity $toggle-time ($toggle-time / 3);
+	} @else {
+		-webkit-transition: $side $toggle-time, opacity ($toggle-time / 3);
+		-moz-transition: $side $toggle-time, opacity ($toggle-time / 3);
+		transition: $side $toggle-time, opacity ($toggle-time / 3);
+	}
+	
+}
+
+.btn-toggle {
+	margin: 3 0 3 0;
+	padding: 0;
+	position: relative;
+	border: none;
+	height: 1.5rem;
+	width: 6rem;
+	border-radius: 1.5rem;
+	color: #6b7381;
+	background: #bdc1c8;
+	&:focus,
+	&.focus,
+	&:focus.active,
+	&.focus.active {
+		outline: none;
+	}
+	&::before,
+	&::after {
+		position: absolute;
+		transition: opacity $toggle-time;
+		top: -3px;
+		display: block;
+		content: ' ';
+		background-repeat: no-repeat;
+		background-size: 40px;
+		height: 30px;
+		width: 40px;
+	}
+	&::before {
+		left: -45px;
+		background-image: url(/static/img/1pane.svg);
+	}
+	&::after {
+		right: -45px;
+		background-image: url(/static/img/2pane.svg);
+		opacity: 0.5;
+	}
+	>.handle {
+		position: absolute;
+		top: 0.1875rem;
+		left: 0.1875rem;
+		width: 1.125rem;
+		height: 1.125rem;
+		border-radius: 1.125rem;
+		background: #fff;
+		transition: left $toggle-time;
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: -.2rem;
+		}
+
+		&::before {
+			content: "2 panes";
+			left: -4rem;
+			color: white;
+		}
+
+		&::after {
+			content: "1 pane";
+			right: -3.5rem;
+			color: black;
+		}
+	}
+	&.active {
+		transition: background-color $toggle-time;
+		background-color: $jolt-blue;
+		&::before {
+			opacity: 0.5;
+		}
+		&::after {
+			opacity: 1;
+		}
+
+		>.handle {
+			left: 4.6875rem;
+			transition: left $toggle-time;
+
+			&::before {
+				@include label-fade(left, 1);
+			}
+	
+			&::after {
+				right: 0rem;
+				@include label-fade(right, 0);
+			}
+		}
+	}
+
+	&:not(.active) {
+		>.handle::before {
+			left: 0rem;
+			@include label-fade(left, 0);
+		}
+
+		>.handle::after {
+			@include label-fade(right, 1);
+		}
+	}
+}

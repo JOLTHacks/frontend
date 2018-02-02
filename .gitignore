@@ -1,4 +1,4 @@
 *.py[cod]
 *.pyc
 app/__pycache__/routes.cpython-36.pyc
-app/static/img/jolt and.ai
+app/static/img/*.ai

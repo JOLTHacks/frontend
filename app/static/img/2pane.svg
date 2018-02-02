@@ -1,0 +1,48 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="288px" height="216px" viewBox="0 0 288 216" enable-background="new 0 0 288 216" xml:space="preserve">
+<g display="none">
+	
+		<line display="inline" fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="36" x2="266.25" y2="36"/>
+	
+		<line display="inline" fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="72" x2="266.25" y2="72"/>
+	
+		<line display="inline" fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="108" x2="266.25" y2="108"/>
+	
+		<line display="inline" fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="144" x2="266.25" y2="144"/>
+	
+		<line display="inline" fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="180" x2="266.25" y2="180"/>
+</g>
+<g>
+	<g>
+		<path fill="#58595B" d="M270,10c4.411,0,8,3.589,8,8v180c0,4.411-3.589,8-8,8H18c-4.411,0-8-3.589-8-8V18c0-4.411,3.589-8,8-8H270
+			 M270,0H18C8.1,0,0,8.1,0,18v180c0,9.9,8.1,18,18,18h252c9.9,0,18-8.1,18-18V18C288,8.1,279.9,0,270,0L270,0z"/>
+	</g>
+	<line fill="none" stroke="#58595B" stroke-width="10" stroke-miterlimit="10" x1="144" y1="0" x2="144" y2="216"/>
+</g>
+<g display="none">
+	<g display="inline">
+		<path fill="none" d="M270,206c4.411,0,8-3.589,8-8V18c0-4.411-3.589-8-8-8H149v196H270z"/>
+		<polygon fill="#333333" points="149,206 149,10 144,10 144,0 139,0 139,216 144,216 144,206 		"/>
+		<path fill="#333333" d="M270,0H149h-5v10h5h121c4.411,0,8,3.589,8,8v180c0,4.411-3.589,8-8,8H149h-5v10h5h121c9.9,0,18-8.1,18-18
+			V18C288,8.1,279.9,0,270,0z"/>
+	</g>
+	<path display="inline" fill="#333333" d="M18,206c-4.411,0-8-3.589-8-8V18c0-4.411,3.589-8,8-8h126V0H18C8.1,0,0,8.1,0,18v180
+		c0,9.9,8.1,18,18,18h126v-10H18z"/>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="36" x2="127.25" y2="36"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="72" x2="127.25" y2="72"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="108" x2="127.25" y2="108"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="144" x2="127.25" y2="144"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="21.75" y1="180" x2="127.25" y2="180"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="160.75" y1="36" x2="266.25" y2="36"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="160.75" y1="72" x2="266.25" y2="72"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="160.75" y1="108" x2="266.25" y2="108"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="160.75" y1="144" x2="266.25" y2="144"/>
+		<line fill="none" stroke="#58595B" stroke-width="7" stroke-miterlimit="10" x1="160.75" y1="180" x2="266.25" y2="180"/>
+	</g>
+</g>
+</svg>

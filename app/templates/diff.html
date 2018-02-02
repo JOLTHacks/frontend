@@ -9,26 +9,21 @@
 
 <header id="tools">
 	<div class="header-container">
-		<div>
-			from {{ startYear }} to {{ endYear }}
+		<div class="tool">
+			<span class="big-only">Versions effective on </span><span class="date">{{ startDate }}</span> and <span class="date">{{ endDate }}</span>
 		</div>
-		<div>
-			TOGGLES
+		<div class="tool" id="view-toggle">
+			<!-- toggle switch -->
+			<button type="button" class="btn btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+				<div class="handle"></div>
+			</button>
 		</div>
 	</div>
 </header>
 
 <div class="main">
-	<!-- toggle switch -->
-	<!-- TODO switch off/on to icons corresponding to one view or side by side -->
-	<button type="button" class="btn btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-		<div class="handle"></div>
-	</button>
-
-	<h1>{{ title}} USC &sect; {{ section }} </h1>
-
 	{% for content in diffs %}
-		<div> Original: {{ content['original'] }} Diff: {{ content['diff']}} </div>
+		<h1>{{ title}} U.S.C. &sect; {{ content.section }}</h1>
 	{% endfor %}
 
 	<div id="scroll-test"></div>

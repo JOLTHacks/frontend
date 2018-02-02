@@ -3,6 +3,7 @@ from app import app
 from string import Template
 import requests
 import json
+from app import constants
 
 TESTING_ONE_SERVER_ONLY = True
 
@@ -20,23 +21,18 @@ def about():
 def diff(title, section, startYear, endYear):
     diffs = []
     for s in section.split('+'):
-        if (not TESTING_ONE_SERVER_ONLY):
-            #todo parameterize url for requests, figure out how more complicated nested sections look coming in from the route
+        if not TESTING_ONE_SERVER_ONLY:
+            # todo parameterize url for requests, 
+            # figure out how more complicated nested sections look coming in from the route
             r = requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear))
             o = json.loads(r.text)
             diffs.append(generateDiffContent(r.text))
         else:
-            diffs = [
-              {
-                "original": "this is original text",
-                "diff": "this is diff text"
-              },
-              {
-                "original": "2this is original text2",
-                "diff": "2this is diff text2"
-              }
-            ]
-    return render_template("diff.html", title=title, section=section, startYear=startYear, endYear=endYear, diffs=diffs)
+            diffs = constants.dummy
+
+    startDate = constants.dates[startYear]
+    endDate = constants.dates[endYear]
+    return render_template("diff.html", title=title, section=section, startYear=startYear, endYear=endYear, startDate=startDate, endDate=endDate, diffs=diffs)
 
 def getDiffRequestStruct(title, section, startYear, endYear):
     t = Template('{"title":$title, "section":$section, "before":$before, "after":$after}')

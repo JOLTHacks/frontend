@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "header-constants.scss"
+        "colors.scss"
     ],
     "names": [],
-    "file": "header-constants.css"
+    "file": "colors.css"
 }

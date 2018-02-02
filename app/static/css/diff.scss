@@ -1,8 +1,10 @@
 @import 'header-constants';
+@import 'colors';
 
 header {
 	&#tools{
-		background-color: greenyellow;
+		background-color: $pale-blue;
+		font-weight: 300;
 		@media screen and (min-width:$screen-med){
 			top: $nav-big-height;
 		}
@@ -12,7 +14,17 @@ header {
 		.header-container {
 			padding-top: $small-padding;
 			padding-bottom: $small-padding;
+			@media screen and (max-width:$screen-med){
+				display:block;
+				text-align:center;
+			}
 		}
+	}
+}
+
+@media screen and (max-width:$screen-med){
+	.big-only {
+		display:none;
 	}
 }
 
@@ -23,4 +35,20 @@ header {
 	@media screen and (max-width:$screen-med){
 		top:$nav-tiny-height;
 	}
+}
+
+.tool {
+	@media screen and (max-width:$screen-med){
+		@include justify-center();
+	}
+}
+
+#view-toggle {
+	@media screen and (max-width:$screen-med){
+		margin-top: 5px;
+	}
+}
+
+.date {
+	font-weight: 900;
 }

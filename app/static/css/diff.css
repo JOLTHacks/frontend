@@ -1,20 +1,68 @@
 header#tools {
-  background-color: greenyellow; }
-  @media screen and (min-width: 768px) {
-    header#tools {
-      top: 90px; } }
-  @media screen and (max-width: 768px) {
-    header#tools {
-      top: 60px; } }
+  background-color: #e6f5ff;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  header#tools {
+    top: 90px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header#tools {
+    top: 60px;
+  }
+}
+
+header#tools .header-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
   header#tools .header-container {
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .big-only {
+    display: none;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .shrink + #tools {
-    top: 60px; } }
+    top: 60px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .shrink + #tools {
-    top: 52px; } }
+    top: 52px;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .tool {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #view-toggle {
+    margin-top: 5px;
+  }
+}
+
+.date {
+  font-weight: 900;
+}
 /*# sourceMappingURL=diff.css.map */

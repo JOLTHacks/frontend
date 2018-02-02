@@ -5,9 +5,7 @@ header {
     position: sticky;
     z-index: 999;
     left: 0;
-    -webkit-transition: all linear 0.3s;
-    -moz-transition: all linear 0.3s; 
-    transition: all linear 0.3s;
+    @include animate(0.3s);
 
     &#nav {
       background-image: url('/static/img/Circuit.png');
@@ -23,23 +21,15 @@ header {
     margin-right:auto;
     margin-left:auto;
     padding:$big-padding;
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-align:center;
-    -ms-flex-align:center;
-    align-items:center;
-    -webkit-box-pack:justify;
-    -ms-flex-pack:justify;
-    justify-content:space-between;
+    @include flexbox();
+    @include justify-sides();
 }
 
 .logo-box{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
 
 .logo{display:block;height:$big-logo;
-    -webkit-transition: all linear 0.3s;
-    -moz-transition: all linear 0.3s;
-    transition: all linear 0.3s;}
+    @include animate(0.3s);
+}
 
 #hacks-logo {
     margin-right:15px;
@@ -78,9 +68,7 @@ header {
     padding-bottom: $small-padding;
   }
   .about-link{
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
+    @include flexbox();
   }
   .logo{
     height:$small-logo;
