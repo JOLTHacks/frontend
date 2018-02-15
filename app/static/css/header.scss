@@ -2,7 +2,7 @@
 header {
 	width: 100%;
 	position: sticky;
-	z-index: 999;
+	z-index: 100;
 	left: 0;
 	@include animate(0.3s);
 	&#nav {

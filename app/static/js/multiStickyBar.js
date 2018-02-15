@@ -1,9 +1,13 @@
 // TODO: need to replace all instances of window.scrollTop with the header combined height
 
 // js/animation.js
-import styles from '../static/css/header-constants.scss'
+import styles from '../css/header-constants.scss'
 
 const headerHeightBig = parseInt(styles.headerHeightBig);
+const headerHeightSmall = parseInt(styles.headerHeightSmall);
+const headerHeightShrinkBig = parseInt(styles.headerHeightShrinkBig);
+const headerHeightShrinkSmall = parseInt(styles.headerHeightShrinkSmall);
+const screenMed = parseInt(styles.screenMed);
 
 var stickyHeaders = (function () {
 
@@ -38,7 +42,23 @@ var stickyHeaders = (function () {
 			var $thisSticky = $(this),
 				$stickyPosition = $thisSticky.data('originalPosition');
 
-			if ($stickyPosition <= $window.scrollTop()) {
+			var headerHeight;
+			var screenBig = $window.width() >= screenMed;
+			var isShrunk = $("#nav").hasClass("shrink");
+			
+			if (screenBig && !isShrunk) {
+				headerHeight = headerHeightBig;
+			} else if (screenBig && isShrunk) {
+				headerHeight = headerHeightShrinkBig;
+			} else if (!screenBig && !isShrunk) {
+				headerHeight = headerHeightSmall;
+			} else {
+				headerHeight = headerHeightShrinkSmall;
+			}
+
+			var scrollComparison = $window.scrollTop() + headerHeight + $thisSticky.data("originalHeight");
+
+			if ($stickyPosition <= scrollComparison) {
 
 				var $nextSticky = $stickies.eq(i + 1),
 					$nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
@@ -56,7 +76,7 @@ var stickyHeaders = (function () {
 
 				$thisSticky.removeClass("fixed");
 
-				if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+				if ($prevSticky.length > 0 && scrollComparison <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
 
 					$prevSticky.removeClass("absolute").removeAttr("style");
 				}

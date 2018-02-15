@@ -1,5 +1,8 @@
 :export {
-  headerHeightBig: 110px;
-  headerHeightSmall: 107px;
+  headerHeightBig: 140px;
+  headerHeightSmall: 115px;
+  headerHeightShrinkBig: 110px;
+  headerHeightShrinkSmall: 107px;
+  screenMed: 768px;
 }
 /*# sourceMappingURL=header-constants.css.map */

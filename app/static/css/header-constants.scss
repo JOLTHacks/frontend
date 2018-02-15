@@ -20,12 +20,20 @@ $toggle-small-margin: 5px;
 $tools-height: (2*$small-padding) + $toggle-pic-height;
 $tools-height-stack: $tools-height + $toggle-small-margin;
 
+// sizes when top bar still big
+$header-ht-big: $nav-big-height + $tools-height;
+$header-ht-small: $nav-small-height + $tools-height-stack;
+
+// these are the sizes when the top bar has already shrunk
 $header-ht-shrink-big: $nav-small-height + $tools-height;
 $header-ht-shrink-small: $nav-tiny-height + $tools-height-stack;
 
 :export {
-    headerHeightBig: $header-ht-shrink-big;
-    headerHeightSmall: $header-ht-shrink-small;
+    headerHeightBig: $header-ht-big;
+    headerHeightSmall: $header-ht-small;
+    headerHeightShrinkBig: $header-ht-shrink-big;
+    headerHeightShrinkSmall: $header-ht-shrink-small;
+    screenMed: $screen-med;
 }
 
 @mixin animate($time) {

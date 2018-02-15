@@ -57,7 +57,7 @@ header {
 	color: white;
 	text-align: center;
 	padding: 10 0 10 0;
-	z-index: 50;
+	z-index: 500;
 	position: relative;
 
 	&.fixed {
@@ -66,14 +66,11 @@ header {
 		box-sizing: border-box;
 		z-index: 0;
 
-		// technically these sizes are only correct when the top bar has shrunk
-		// HOWEVER, the top bar shrinks on scroll and these only apply on scroll
-		// so i am using it anyway
 		@media screen and (min-width:$screen-med){
-			top: $header-ht-shrink-big;
+			top: $header-ht-big;
 		}
 		@media screen and (max-width:$screen-med){
-			top: $header-ht-shrink-small;
+			top: $header-ht-small;
 		}
 
 		&.absolute {
@@ -95,4 +92,17 @@ header {
 
 .section-content {
 	height: 600px;
+}
+
+// .shrink is on & sibling with: .section-bar.fixed (screen sizes)
+
+#nav.shrink ~ .main {
+	.section-bar.fixed {		
+		@media screen and (min-width:$screen-med){
+			top: $header-ht-shrink-big;
+		}
+		@media screen and (max-width:$screen-med){
+			top: $header-ht-shrink-small;
+		}
+	}
 }
