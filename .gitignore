@@ -1,4 +1,6 @@
 *.py[cod]
 *.pyc
-app/__pycache__/routes.cpython-36.pyc
+app/__pycache__/*
 app/static/img/*.ai
+__pycache__/*
+node_modules/*
