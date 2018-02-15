@@ -66,4 +66,13 @@ dummy = [{
             "markUpContent": "<span class='numbering'>(b)</span> Subsection AGAIN AGAIN for <span class='delete'>the current section</span><span class='add'>section 1 of Title whatever</span>."
         },
     ]
+},
+{
+    "section": 3,
+    "text": [
+        {
+            "indentLevel": 0,
+            "markUpContent": "This is a new set of <span class='delete'>fake</span><span class='add'>dummy</span> values."
+        },
+    ]
 }]

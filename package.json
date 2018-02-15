@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Statutory Interpolation",
+  "main": "jolthacks.py",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.11.0"
+  },
+  "scripts": {
+    "watch": "webpack --config webpack.config.js --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JOLTHacks/frontend.git"
+  },
+  "author": "JOLT",
+  "license": "See Github",
+  "bugs": {
+    "url": "https://github.com/JOLTHacks/frontend/issues"
+  },
+  "homepage": "https://github.com/JOLTHacks/frontend#readme"
+}
