@@ -1,8 +1,8 @@
 :export {
   headerHeightBig: 140px;
-  headerHeightSmall: 115px;
+  headerHeightSmall: 104px;
   headerHeightShrinkBig: 110px;
-  headerHeightShrinkSmall: 107px;
+  headerHeightShrinkSmall: 96px;
   screenMed: 768px;
 }
 
@@ -77,7 +77,7 @@ header#tools .header-container {
   color: white;
   text-align: center;
   padding: 10 0 10 0;
-  z-index: 500;
+  z-index: 50;
   position: relative;
 }
 
@@ -96,7 +96,7 @@ header#tools .header-container {
 
 @media screen and (max-width: 768px) {
   .section-bar.fixed {
-    top: 115px;
+    top: 104px;
   }
 }
 
@@ -122,7 +122,7 @@ header#tools .header-container {
 
 @media screen and (max-width: 768px) {
   #nav.shrink ~ .main .section-bar.fixed {
-    top: 107px;
+    top: 96px;
   }
 }
 /*# sourceMappingURL=diff.css.map */

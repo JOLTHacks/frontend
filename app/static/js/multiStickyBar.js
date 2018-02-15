@@ -76,7 +76,7 @@ var stickyHeaders = (function () {
 
 				$thisSticky.removeClass("fixed");
 
-				if ($prevSticky.length > 0 && scrollComparison <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+				if ($prevSticky.length > 0 && scrollComparison <= $thisSticky.data('originalPosition') + $thisSticky.data('originalHeight')) {
 
 					$prevSticky.removeClass("absolute").removeAttr("style");
 				}

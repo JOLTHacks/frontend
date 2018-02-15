@@ -18,15 +18,15 @@ $toggle-pic-height: 30px;
 $toggle-small-margin: 5px;
 
 $tools-height: (2*$small-padding) + $toggle-pic-height;
-$tools-height-stack: $tools-height + $toggle-small-margin;
+$tools-height-small: (2*$small-padding) + 24px;
 
 // sizes when top bar still big
 $header-ht-big: $nav-big-height + $tools-height;
-$header-ht-small: $nav-small-height + $tools-height-stack;
+$header-ht-small: $nav-small-height + $tools-height-small;
 
 // these are the sizes when the top bar has already shrunk
 $header-ht-shrink-big: $nav-small-height + $tools-height;
-$header-ht-shrink-small: $nav-tiny-height + $tools-height-stack;
+$header-ht-shrink-small: $nav-tiny-height + $tools-height-small;
 
 :export {
     headerHeightBig: $header-ht-big;
