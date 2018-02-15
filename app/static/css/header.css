@@ -71,8 +71,7 @@ header#nav {
   .logo-box {
     -ms-flex-wrap: wrap;
   }
-  flex-wrap:wrap
-.logo-box:before {
+  flex-wrap:wrap .logo-box:before {
     content: "";
     width: 100%;
     -webkit-box-ordinal-group: 2;

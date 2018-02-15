@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" type="text/css" href="/static/css/diff.css">
 <script src="/static/js/diff.js"></script>
+<script src="/static/js/multiStickyBar.js"></script>
 
 {{ header() }}
 
@@ -23,10 +24,13 @@
 
 <div class="main">
 	{% for content in diffs %}
-		<h1>{{ title}} U.S.C. &sect; {{ content.section }}</h1>
+	<div class="section-bar">
+		<p>{{ title}} U.S.C. &sect; {{ content.section }}</p>
+	</div>
+	<div class="section-content">
+		THIS IS SOME TEXT
+	</div>
 	{% endfor %}
-
-	<div id="scroll-test"></div>
 </div>
 
 

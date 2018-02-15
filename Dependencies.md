@@ -10,6 +10,10 @@ Bootstrap Button Toggle (On/Off Switch)
 
 https://codepen.io/aanjulena/full/ZLZjzV/
 
+Multiple Sticky Titles with CSS and JS
+
+https://codepen.io/aanjulena/full/ZLZjzV/
+
 Python 3
 
 License: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release
@@ -18,14 +22,10 @@ Flask
 
 License: http://flask.pocoo.org/docs/0.12/license/#flask-license
 
-Less
+Sass
 
-License: https://github.com/less/less-docs/blob/master/LICENSE-MIT
+License: http://sass-lang.com/documentation/file.MIT-LICENSE.html
 
 Node.js
 
 License: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
-
-Materialize CSS
-
-License: https://github.com/Dogfalo/materialize/blob/master/LICENSE

@@ -26,6 +26,10 @@ header {
 	.big-only {
 		display:none;
 	}
+
+	.tool {
+		@include justify-center();
+	}
 }
 
 .shrink + #tools {
@@ -33,22 +37,62 @@ header {
 		top: $nav-small-height;
 	}
 	@media screen and (max-width:$screen-med){
-		top:$nav-tiny-height;
-	}
-}
-
-.tool {
-	@media screen and (max-width:$screen-med){
-		@include justify-center();
+		top: $nav-tiny-height;
 	}
 }
 
 #view-toggle {
 	@media screen and (max-width:$screen-med){
-		margin-top: 5px;
+		margin-top: $toggle-small-margin;
 	}
 }
 
 .date {
 	font-weight: 900;
+}
+
+.section-bar {
+	width: 100%;
+	background-color: $jolt-blue;
+	color: white;
+	text-align: center;
+	padding: 10 0 10 0;
+	z-index: 50;
+	position: relative;
+
+	&.fixed {
+		position: fixed;
+		width: 100%;
+		box-sizing: border-box;
+		z-index: 0;
+
+		// technically these sizes are only correct when the top bar has shrunk
+		// HOWEVER, the top bar shrinks on scroll and these only apply on scroll
+		// so i am using it anyway
+		@media screen and (min-width:$screen-med){
+			top: $header-ht-shrink-big;
+		}
+		@media screen and (max-width:$screen-med){
+			top: $header-ht-shrink-small;
+		}
+
+		&.absolute {
+			position: absolute;
+		}
+	}
+
+	> p {
+		margin: 0;
+		padding: 0;
+		font-size: 1.3rem;
+	}
+}
+
+// FOR TESTING ONLY
+// #tools {
+// 	display: none;
+// }
+
+.section-content {
+	height: 600px;
 }

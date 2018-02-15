@@ -16,6 +16,7 @@ form {
 	background-color: #191970;
 	border-color: #191970;
 }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -23,6 +24,7 @@ form {
 	background-color: #14145b;
 	border-color: #101046;
 }
+
 .btn-primary.disabled:hover,
 .btn-primary.disabled:focus,
 .btn-primary.disabled:active,
@@ -44,6 +46,7 @@ fieldset[disabled] .btn-primary.active {
 	border-color: #fc0;
 	color: #191970;
 }
+
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active,
@@ -51,6 +54,7 @@ fieldset[disabled] .btn-primary.active {
 	background-color: #e6b800;
 	border-color: #cca300;
 }
+
 .btn-secondary.disabled:hover,
 .btn-secondary.disabled:focus,
 .btn-secondary.disabled:active,
@@ -68,16 +72,16 @@ fieldset[disabled] .btn-secondary.active {
 }
 
 .jolt-logo--grey {
-	fill:#fff
+	fill: #fff
 }
 
 .jolt-logo--blue,
 .jolt-logo--teal {
-	fill:#43b0f2
+	fill: #43b0f2
 }
 
 .jolt-logo--yellow {
-	fill:#fc0
+	fill: #fc0
 }
 
 .about-link a {
@@ -88,9 +92,10 @@ fieldset[disabled] .btn-secondary.active {
 	transition: .3s all linear;
 	position: relative;
 	padding: .5em 0;
-	
-  }
-  .about-link a:before, .about-link a:after {
+}
+
+.about-link a:before,
+.about-link a:after {
 	content: "";
 	height: 3px;
 	width: 0%;
@@ -99,32 +104,41 @@ fieldset[disabled] .btn-secondary.active {
 	bottom: 0;
 	-webkit-transition: .2s all linear;
 	transition: .2s all linear;
-  }
-  .about-link a:before {
-	left: 50%;
-  }
-  .about-link a:after {
-	right: 50%;
-  }
-  .about-link a:hover {
-	color: #fc0;
-  }
-  .about-link a:hover:before, .about-link a:hover:after {
-	width: 100%;
-  }
-  .about-link a:hover:before {
-	left: 0%;
-  }
-  .about-link a:hover:after {
-	right: 0%;
-  }
-  .about-link a:active, .about-link a:focus {
-	color: #fc0;
-  }
-  .about-link a:active:before, .about-link a:active:after, .about-link a:focus:before, .about-link a:focus:after {
-	background: #fc0;
-  }
+}
 
-#scroll-test{
-	height:2000px;
+.about-link a:before {
+	left: 50%;
+}
+
+.about-link a:after {
+	right: 50%;
+}
+
+.about-link a:hover {
+	color: #fc0;
+}
+
+.about-link a:hover:before,
+.about-link a:hover:after {
+	width: 100%;
+}
+
+.about-link a:hover:before {
+	left: 0%;
+}
+
+.about-link a:hover:after {
+	right: 0%;
+}
+
+.about-link a:active,
+.about-link a:focus {
+	color: #fc0;
+}
+
+.about-link a:active:before,
+.about-link a:active:after,
+.about-link a:focus:before,
+.about-link a:focus:after {
+	background: #fc0;
 }
