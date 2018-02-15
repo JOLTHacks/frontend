@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=header-constants.css.map */
+:export {
+  headerHeightBig: 110px;
+  headerHeightSmall: 107px;
+}
+/*# sourceMappingURL=header-constants.css.map */

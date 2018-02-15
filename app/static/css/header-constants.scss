@@ -23,6 +23,11 @@ $tools-height-stack: $tools-height + $toggle-small-margin;
 $header-ht-shrink-big: $nav-small-height + $tools-height;
 $header-ht-shrink-small: $nav-tiny-height + $tools-height-stack;
 
+:export {
+    headerHeightBig: $header-ht-shrink-big;
+    headerHeightSmall: $header-ht-shrink-small;
+}
+
 @mixin animate($time) {
     -webkit-transition: all linear $time;
     -moz-transition: all linear $time; 

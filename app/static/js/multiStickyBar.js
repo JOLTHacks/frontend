@@ -1,6 +1,9 @@
-// this is based on a codepen https://codepen.io/aanjulena/full/ZLZjzV/
-
 // TODO: need to replace all instances of window.scrollTop with the header combined height
+
+// js/animation.js
+import styles from '../static/css/header-constants.scss'
+
+const headerHeightBig = parseInt(styles.headerHeightBig);
 
 var stickyHeaders = (function () {
 

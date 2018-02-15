@@ -3,31 +3,31 @@ header#tools {
   font-weight: 300;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768) {
   header#tools {
-    top: 90px;
+    top: 90;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   header#tools {
-    top: 60px;
+    top: 60;
   }
 }
 
 header#tools .header-container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 10;
+  padding-bottom: 10;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   header#tools .header-container {
     display: block;
     text-align: center;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   .big-only {
     display: none;
   }
@@ -41,21 +41,21 @@ header#tools .header-container {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768) {
   .shrink + #tools {
-    top: 60px;
+    top: 60;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   .shrink + #tools {
-    top: 52px;
+    top: 52;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   #view-toggle {
-    margin-top: 5px;
+    margin-top: 5;
   }
 }
 
@@ -80,15 +80,15 @@ header#tools .header-container {
   z-index: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768) {
   .section-bar.fixed {
-    top: 110px;
+    top: 110;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768) {
   .section-bar.fixed {
-    top: 107px;
+    top: 107;
   }
 }
 
