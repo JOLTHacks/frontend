@@ -4,13 +4,24 @@ $screen-med: 768px;
 $big-logo: 50px;
 $big-padding: 20px;
 $nav-big-height: ($big-logo + 2*$big-padding);
+
 $small-logo: 40px;
 $small-padding: 10px;
 $nav-small-height: ($small-logo + 2*$small-padding);
+
 $tiny-logo: 27px;
 $tiny-about: 40px;
 $tiny-padding: 6px;
 $nav-tiny-height: ($tiny-about + 2*$tiny-padding); 
+
+$toggle-pic-height: 30px;
+$toggle-small-margin: 5px;
+
+$tools-height: (2*$small-padding) + $toggle-pic-height;
+$tools-height-stack: $tools-height + $toggle-small-margin;
+
+$header-ht-shrink-big: $nav-small-height + $tools-height;
+$header-ht-shrink-small: $nav-tiny-height + $tools-height-stack;
 
 @mixin animate($time) {
     -webkit-transition: all linear $time;
