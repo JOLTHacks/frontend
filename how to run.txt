@@ -2,3 +2,6 @@ on windows:
 set FLASK_DEBUG=1
 set FLASK_APP=jolthacks.py
 flask run
+
+to run the webpack: IN SEPARATE CMD
+npm run watch

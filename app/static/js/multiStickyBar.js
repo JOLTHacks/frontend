@@ -1,5 +1,3 @@
-// TODO: need to replace all instances of window.scrollTop with the header combined height
-
 // js/animation.js
 import styles from '../css/header-constants.scss'
 

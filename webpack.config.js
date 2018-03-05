@@ -2,7 +2,8 @@ var webpack = require("webpack");
 var path = require('path');
 module.exports = {
 	entry: {
-		multiStickyBar: "./app/static/js/multiStickyBar.js"
+		multiStickyBar: "./app/static/js/multiStickyBar.js",
+		diff: "./app/static/js/diff.js"
 	},
 	output: {
 		filename: "./app/static/js/[name]-compiled.js"
