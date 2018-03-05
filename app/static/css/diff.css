@@ -110,10 +110,6 @@ header#tools .header-container {
   font-size: 1.3rem;
 }
 
-.section-content {
-  height: 600px;
-}
-
 @media screen and (min-width: 768px) {
   #nav.shrink ~ .main .section-bar.fixed {
     top: 110px;
@@ -124,5 +120,18 @@ header#tools .header-container {
   #nav.shrink ~ .main .section-bar.fixed {
     top: 96px;
   }
+}
+
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-content .item {
+  width: 50%;
+}
+
+.section-content .item.left .add {
+  display: none;
 }
 /*# sourceMappingURL=diff.css.map */

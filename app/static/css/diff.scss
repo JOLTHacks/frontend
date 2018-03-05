@@ -85,17 +85,6 @@ header {
 	}
 }
 
-// FOR TESTING ONLY
-// #tools {
-// 	display: none;
-// }
-
-.section-content {
-	height: 600px;
-}
-
-// .shrink is on & sibling with: .section-bar.fixed (screen sizes)
-
 #nav.shrink ~ .main {
 	.section-bar.fixed {		
 		@media screen and (min-width:$screen-med){
@@ -103,6 +92,24 @@ header {
 		}
 		@media screen and (max-width:$screen-med){
 			top: $header-ht-shrink-small;
+		}
+	}
+}
+
+.section-content {
+	display: flex;
+	flex-wrap: wrap;
+	
+	.item {
+		width: 50%;
+		&.left {
+			.add {
+				display:none;
+			}
+		}
+
+		&.right {
+			
 		}
 	}
 }

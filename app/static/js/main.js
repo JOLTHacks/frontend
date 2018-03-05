@@ -26,8 +26,8 @@ if (titles.length == 1) {
 var DIFF_MAX = 5;
 
 // THESE ARE THE YEARS WE SUPPORT
-var MIN_YEAR = 1994;
-var MAX_YEAR = 2016;
+var MIN_YEAR = 1995;
+var MAX_YEAR = 2017;
 
 // this is converting them into two digit format...basically just taking the last 2 digits of the number
 var MIN_YEAR_SHORT = parseInt(MIN_YEAR.toString().slice(-2));

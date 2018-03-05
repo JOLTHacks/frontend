@@ -1,3 +1,11 @@
+:export {
+  headerHeightBig: 140px;
+  headerHeightSmall: 104px;
+  headerHeightShrinkBig: 110px;
+  headerHeightShrinkSmall: 96px;
+  screenMed: 768px;
+}
+
 .btn-toggle {
   margin: 3 0 3 0;
   padding: 0;
@@ -22,7 +30,7 @@
   content: ' ';
   background-repeat: no-repeat;
   background-size: 40px;
-  height: 30;
+  height: 30px;
   width: 40px;
 }
 

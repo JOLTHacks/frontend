@@ -23,12 +23,20 @@
 </header>
 
 <div class="main">
-	{% for content in diffs %}
+	{% for each in diffs %}
 	<div class="section-bar">
-		<p>{{ title}} U.S.C. &sect; {{ content.section }}</p>
+		<p>{{ title }} U.S.C. &sect; {{ each.section }}</p>
 	</div>
 	<div class="section-content">
-		THIS IS SOME TEXT
+		<!-- ADD DROPDOWNS -->
+		{% for clause in each.text %}
+			<div class="item left" data-indent= "{{ clause.indentLevel }}">
+				{{ clause.markUpContent|safe }}
+			</div>
+			<div class="item right" data-indent= "{{ clause.indentLevel }}">
+				{{ clause.markUpContent|safe }}
+			</div>
+		{% endfor %}
 	</div>
 	{% endfor %}
 </div>

@@ -1,27 +1,29 @@
+# TODO: change the year to date matching & check w backend
+
 dates = {
-    1994: "January 4, 1995",
-    1995: "January 16, 1996",
-    1996: "January 6, 1997",
-    1997: "January 26, 1998",
-    1998: "January 5, 1999",
-    1999: "January 23, 2000",
-    2000: "January 2, 2001",
-    2001: "January 22, 2002",
-    2002: "January 6, 2003",
-    2003: "January 19, 2004",
-    2004: "January 3, 2005",
-    2005: "January 2, 2006",
-    2006: "January 3, 2007",
-    2007: "January 8, 2008",
-    2008: "January 5, 2009",
-    2009: "February 1, 2010",
-    2010: "January 7, 2011",
-    2011: "January 3, 2012",
-    2012: "January 15, 2013",
-    2013: "January 16, 2014",
-    2014: "January 5, 2015",
-    2015: "January 3, 2016",
-    2016: "January 6, 2017"
+    1995: "January 4, 1995",
+    1996: "January 16, 1996",
+    1997: "January 6, 1997",
+    1998: "January 26, 1998",
+    1999: "January 5, 1999",
+    2000: "January 23, 2000",
+    2001: "January 2, 2001",
+    2002: "January 22, 2002",
+    2003: "January 6, 2003",
+    2004: "January 19, 2004",
+    2005: "January 3, 2005",
+    2006: "January 2, 2006",
+    2007: "January 3, 2007",
+    2008: "January 8, 2008",
+    2009: "January 5, 2009",
+    2010: "February 1, 2010",
+    2011: "January 7, 2011",
+    2012: "January 3, 2012",
+    2013: "January 15, 2013",
+    2014: "January 16, 2014",
+    2015: "January 5, 2015",
+    2016: "January 3, 2016",
+    2017: "January 6, 2017"
 }
 
 # DUMMY VALUES
@@ -30,7 +32,7 @@ dummy = [{
     "text": [
         {
             "indentLevel": 0,
-            "markUpContent": "This is a set of <span class='delete'>fake</span><span class='add'>dummy</span> values."
+            "markUpContent": "This is a set of <span class='delete'>fake</span><span class='add'>dummy</span> values.<span class='add'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span>"
         },
         {
             "indentLevel": 1,
