@@ -30,11 +30,13 @@
 	<div class="section-content">
 		<!-- ADD DROPDOWNS -->
 		{% for clause in each.text %}
-			<div class="item left" data-indent= "{{ clause.indentLevel }}">
-				{{ clause.markUpContent|safe }}
-			</div>
-			<div class="item right" data-indent= "{{ clause.indentLevel }}">
-				{{ clause.markUpContent|safe }}
+			<div class="item">
+				<div class="left" data-indent= "{{ clause.indentLevel }}">
+					{{ clause.markUpContent|safe }}
+				</div>
+				<div class="right" data-indent= "{{ clause.indentLevel }}">
+					{{ clause.markUpContent|safe }}
+				</div>
 			</div>
 		{% endfor %}
 	</div>
