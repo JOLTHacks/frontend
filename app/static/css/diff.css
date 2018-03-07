@@ -76,9 +76,14 @@ header#tools .header-container {
   background-color: #191970;
   color: white;
   text-align: center;
-  padding: 10 0 10 0;
+  padding: 10 calc(5vw + 20px);
   z-index: 50;
   position: relative;
+}
+
+.section-bar.two-pane-on {
+  display: flex;
+  justify-content: space-between;
 }
 
 .section-bar.fixed {
@@ -146,18 +151,26 @@ header#tools .header-container {
   padding-left: calc(5vw + 20px);
 }
 
-.section-content .item .add {
+.section-content .item.markup .add {
   color: green;
   text-decoration: underline;
   font-weight: bold;
   padding: 0 3px;
 }
 
-.section-content .item .delete {
+.section-content .item.markup .delete {
   color: red;
   text-decoration: line-through;
   font-weight: bold;
   padding: 0 3px;
+}
+
+.section-content .item.after .delete {
+  display: none;
+}
+
+.section-content .item.before .add {
+  display: none;
 }
 
 .section-content .item.full-width {
@@ -171,7 +184,12 @@ header#tools .header-container {
   }
 }
 
-.section-content .item.hidden {
+.dropdown {
+  width: 120px;
+  z-index: 75;
+}
+
+.hidden {
   display: none;
 }
 /*# sourceMappingURL=diff.css.map */

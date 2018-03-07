@@ -56,9 +56,14 @@ header {
 	background-color: $jolt-blue;
 	color: white;
 	text-align: center;
-	padding: 10 0 10 0;
+	padding: 10 calc(5vw + 20px);
 	z-index: 50;
 	position: relative;
+
+	&.two-pane-on {
+		display:flex;
+		justify-content:space-between;
+	}
 
 	&.fixed {
 		position: fixed;
@@ -114,17 +119,29 @@ header {
 		&.left {
 			padding-left: calc(5vw + 20px);
 		}
-		.add {
-			color: green;
-			text-decoration: underline;
-			font-weight: bold;
-			padding: 0 3px;
+		&.markup {
+			.add {
+				color: green;
+				text-decoration: underline;
+				font-weight: bold;
+				padding: 0 3px;
+			}
+			.delete {
+				color: red;
+				text-decoration: line-through;
+				font-weight: bold;
+				padding: 0 3px;
+			}
 		}
-		.delete {
-			color: red;
-			text-decoration: line-through;
-			font-weight: bold;
-			padding: 0 3px;
+		&.after {
+			.delete {
+				display:none;
+			}
+		}
+		&.before {
+			.add {
+				display:none;
+			}
 		}
 		&.full-width {
 			width:100%;
@@ -134,9 +151,14 @@ header {
 				padding: 20 25%;
 			}
 		}
-		&.hidden {
-			display:none;
-		}
 	}
+}
 
+.dropdown {
+	width: 120px;
+	z-index: 75;
+}
+
+.hidden {
+	display:none;
 }

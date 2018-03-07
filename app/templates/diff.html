@@ -25,10 +25,31 @@
 <div class="main">
 	{% for each in diffs %}
 	<div class="section-bar">
+		<div class="dropdown left big-only">
+			<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">
+				<span class="selection"></span>
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" data-display="markup">Show Markup</a>
+				<a class="dropdown-item" data-display="before" id="leftInitial">{{ startYear }} Version</a>
+				<a class="dropdown-item" data-display="after">{{ endYear }} Version</a>
+			</div>
+		</div>
 		<p>{{ title }} U.S.C. &sect; {{ each.section }}</p>
+		<div class="dropdown right big-only">
+				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">
+					<span class="selection"></span>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" data-display="markup" id="rightInitial">Show Markup</a>
+					<a class="dropdown-item" data-display="before">{{ startYear }} Version</a>
+					<a class="dropdown-item" data-display="after">{{ endYear }} Version</a>
+				</div>
+			</div>
 	</div>
 	<div class="section-content">
-		<!-- ADD DROPDOWNS -->
 		{% for clause in each.text %}
 				<div class="left item" data-indent= "{{ clause.indentLevel }}">
 					{{ clause.markUpContent|safe }}
