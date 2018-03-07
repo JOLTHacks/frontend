@@ -43,6 +43,10 @@ dummy = [{
             "markUpContent": "<span class='numbering'>(1)</span> This is a subsubsection for fun."
         },
         {
+            "indentLevel": 2,
+            "markUpContent": "<span class='add'><span class='numbering'>(2)</span> This is a subsubsection for fun.</span>"
+        },
+        {
             "indentLevel": 1,
             "markUpContent": "<span class='numbering'>(b)</span> Subsection AGAIN for <span class='delete'>the current section</span><span class='add'>section 1 of Title whatever</span>."
         },
@@ -74,7 +78,7 @@ dummy = [{
     "text": [
         {
             "indentLevel": 0,
-            "markUpContent": "This is a new set of <span class='delete'>fake</span><span class='add'>dummy</span> values."
+            "markUpContent": "This is a new set of <span class='delete'>fake</span><span class='add'>dummy</span> values.<span class='delete'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span>"
         },
     ]
 }]

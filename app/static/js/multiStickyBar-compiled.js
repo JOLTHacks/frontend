@@ -60,116 +60,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__);
-// js/animation.js
-
-
-const headerHeightBig = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightBig);
-const headerHeightSmall = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightSmall);
-const headerHeightShrinkBig = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightShrinkBig);
-const headerHeightShrinkSmall = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightShrinkSmall);
-const screenMed = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.screenMed);
-
-var stickyHeaders = (function () {
-
-	var $window = $(window),
-		$stickies;
-
-	var load = function (stickies) {
-
-		if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
-
-			$stickies = stickies.each(function () {
-
-				var $thisSticky = $(this).wrap('<div class="followWrap" />');
-
-				$thisSticky
-					.data('originalPosition', $thisSticky.offset().top)
-					.data('originalHeight', $thisSticky.outerHeight())
-					.parent()
-					.height($thisSticky.outerHeight());
-			});
-
-			$window.off("scroll.stickies").on("scroll.stickies", function () {
-				_whenScrolling();
-			});
-		}
-	};
-
-	var _whenScrolling = function () {
-
-		$stickies.each(function (i) {
-
-			var $thisSticky = $(this),
-				$stickyPosition = $thisSticky.data('originalPosition');
-
-			var headerHeight;
-			var screenBig = $window.width() >= screenMed;
-			var isShrunk = $("#nav").hasClass("shrink");
-			
-			if (screenBig && !isShrunk) {
-				headerHeight = headerHeightBig;
-			} else if (screenBig && isShrunk) {
-				headerHeight = headerHeightShrinkBig;
-			} else if (!screenBig && !isShrunk) {
-				headerHeight = headerHeightSmall;
-			} else {
-				headerHeight = headerHeightShrinkSmall;
-			}
-
-			var scrollComparison = $window.scrollTop() + headerHeight + $thisSticky.data("originalHeight");
-
-			if ($stickyPosition <= scrollComparison) {
-
-				var $nextSticky = $stickies.eq(i + 1),
-					$nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
-
-				$thisSticky.addClass("fixed");
-
-				if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
-
-					$thisSticky.addClass("absolute").css("top", $nextStickyPosition);
-				}
-
-			} else {
-
-				var $prevSticky = $stickies.eq(i - 1);
-
-				$thisSticky.removeClass("fixed");
-
-				if ($prevSticky.length > 0 && scrollComparison <= $thisSticky.data('originalPosition') + $thisSticky.data('originalHeight')) {
-
-					$prevSticky.removeClass("absolute").removeAttr("style");
-				}
-			}
-		});
-	};
-
-	return {
-		load: load
-	};
-})();
-
-$(function () {
-	stickyHeaders.load($(".section-bar"));
-});
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(2);
+var content = __webpack_require__(1);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -183,7 +82,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -215,10 +114,10 @@ if(false) {
 }
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -235,7 +134,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /*
@@ -317,7 +216,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -383,7 +282,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(5);
+var	fixUrls = __webpack_require__(4);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -699,7 +598,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 
@@ -792,6 +691,107 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__);
+// js/animation.js
+
+
+const headerHeightBig = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightBig);
+const headerHeightSmall = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightSmall);
+const headerHeightShrinkBig = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightShrinkBig);
+const headerHeightShrinkSmall = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.headerHeightShrinkSmall);
+const screenMed = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default.a.screenMed);
+
+var stickyHeaders = (function () {
+
+	var $window = $(window),
+		$stickies;
+
+	var load = function (stickies) {
+
+		if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+
+			$stickies = stickies.each(function () {
+
+				var $thisSticky = $(this).wrap('<div class="followWrap" />');
+
+				$thisSticky
+					.data('originalPosition', $thisSticky.offset().top)
+					.data('originalHeight', $thisSticky.outerHeight())
+					.parent()
+					.height($thisSticky.outerHeight());
+			});
+
+			$window.off("scroll.stickies").on("scroll.stickies", function () {
+				_whenScrolling();
+			});
+		}
+	};
+
+	var _whenScrolling = function () {
+
+		$stickies.each(function (i) {
+
+			var $thisSticky = $(this),
+				$stickyPosition = $thisSticky.data('originalPosition');
+
+			var headerHeight;
+			var screenBig = $window.width() >= screenMed;
+			var isShrunk = $("#nav").hasClass("shrink");
+			
+			if (screenBig && !isShrunk) {
+				headerHeight = headerHeightBig;
+			} else if (screenBig && isShrunk) {
+				headerHeight = headerHeightShrinkBig;
+			} else if (!screenBig && !isShrunk) {
+				headerHeight = headerHeightSmall;
+			} else {
+				headerHeight = headerHeightShrinkSmall;
+			}
+
+			var scrollComparison = $window.scrollTop() + headerHeight + $thisSticky.data("originalHeight");
+
+			if ($stickyPosition <= scrollComparison) {
+
+				var $nextSticky = $stickies.eq(i + 1),
+					$nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+
+				$thisSticky.addClass("fixed");
+
+				if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+
+					$thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+				}
+
+			} else {
+
+				var $prevSticky = $stickies.eq(i - 1);
+
+				$thisSticky.removeClass("fixed");
+
+				if ($prevSticky.length > 0 && scrollComparison <= $thisSticky.data('originalPosition') + $thisSticky.data('originalHeight')) {
+
+					$prevSticky.removeClass("absolute").removeAttr("style");
+				}
+			}
+		});
+	};
+
+	return {
+		load: load
+	};
+})();
+
+$(function () {
+	stickyHeaders.load($(".section-bar"));
+});
 
 /***/ })
 /******/ ]);

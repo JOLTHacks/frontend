@@ -34,14 +34,30 @@ $(function () {
 		// if only one pane visible do this
 		if (!twoPanes) {
 			// hide the right column in the section content
-			$(".item.right").hide();
+			$(".right").addClass("hidden");
 			// set left column width to 100%
-			$(".item.left").width("100%");
+			$(".left").addClass("full-width");
 		} else {
 			// show right column in section content
-			$(".item.right").show();
+			$(".right").removeClass("hidden");
 			// set left column width to 50% again
-			$(".item.left").width("50%");
+			$(".left").removeClass("full-width");
 		}
+		reindent();
+	}
+
+	function reindent() {
+		// set indenting based on level of subsection
+		$(".item").each(function (i, clause) {
+			// remove previous styles so we're not stacking indents
+			$(clause).removeAttr("style");
+
+			var currIndent = parseInt($(clause).css("padding-left"));
+			var indentAmt = $(clause).data("indent");
+
+			// set padding left to be old val + new amount
+			var newIndent = Math.min(indentAmt, 3) * 25;
+			$(clause).css("padding-left", currIndent + newIndent);
+		})
 	}
 });

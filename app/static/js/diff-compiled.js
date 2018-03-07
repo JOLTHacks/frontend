@@ -64,12 +64,11 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(2);
+var content = __webpack_require__(1);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -83,7 +82,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -115,10 +114,10 @@ if(false) {
 }
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -135,7 +134,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /*
@@ -217,7 +216,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -283,7 +282,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(5);
+var	fixUrls = __webpack_require__(4);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -599,7 +598,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 
@@ -694,12 +693,13 @@ module.exports = function (css) {
 
 
 /***/ }),
+/* 5 */,
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scss__);
 
 
@@ -737,15 +737,31 @@ $(function () {
 		// if only one pane visible do this
 		if (!twoPanes) {
 			// hide the right column in the section content
-			$(".item.right").hide();
+			$(".right").addClass("hidden");
 			// set left column width to 100%
-			$(".item.left").width("100%");
+			$(".left").addClass("full-width");
 		} else {
 			// show right column in section content
-			$(".item.right").show();
+			$(".right").removeClass("hidden");
 			// set left column width to 50% again
-			$(".item.left").width("50%");
+			$(".left").removeClass("full-width");
 		}
+		reindent();
+	}
+
+	function reindent() {
+		// set indenting based on level of subsection
+		$(".item").each(function (i, clause) {
+			// remove previous styles so we're not stacking indents
+			$(clause).removeAttr("style");
+
+			var currIndent = parseInt($(clause).css("padding-left"));
+			var indentAmt = $(clause).data("indent");
+
+			// set padding left to be old val + new amount
+			var newIndent = Math.min(indentAmt, 3) * 25;
+			$(clause).css("padding-left", currIndent + newIndent);
+		})
 	}
 });
 

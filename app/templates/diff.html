@@ -11,7 +11,7 @@
 <header id="tools">
 	<div class="header-container">
 		<div class="tool">
-			<span class="big-only">Versions effective on </span><span class="date">{{ startDate }}</span> and <span class="date">{{ endDate }}</span>
+			<span class="big-only">Versions effective on </span><span class="date">{{ startDate }}</span> – <span class="date">{{ endDate }}</span>
 		</div>
 		<div class="tool big-only" id="view-toggle">
 			<!-- toggle switch -->
@@ -30,14 +30,12 @@
 	<div class="section-content">
 		<!-- ADD DROPDOWNS -->
 		{% for clause in each.text %}
-			<div class="item">
-				<div class="left" data-indent= "{{ clause.indentLevel }}">
+				<div class="left item" data-indent= "{{ clause.indentLevel }}">
 					{{ clause.markUpContent|safe }}
 				</div>
-				<div class="right" data-indent= "{{ clause.indentLevel }}">
+				<div class="right item" data-indent= "{{ clause.indentLevel }}">
 					{{ clause.markUpContent|safe }}
 				</div>
-			</div>
 		{% endfor %}
 	</div>
 	{% endfor %}

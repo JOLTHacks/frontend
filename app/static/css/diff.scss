@@ -100,27 +100,42 @@ header {
 	display: flex;
 	flex-wrap: wrap;
 	.item {
-		display: flex;
-		flex-direction: row;
-		width: 100%;
-		padding: 20px 10px;
-		&:nth-of-type(2n) {
+		width: 50%;
+		padding: 20;
+		box-sizing: border-box;
+		text-align:justify;
+		&:nth-of-type(4n-1),
+		&:nth-of-type(4n) {
 			background-color: #e6f5ff;
 		}
-		.left, .right {
-			width: 50%;
-			.add {
-				color: green;
-				text-decoration: underline;
-				font-weight: bold;
-				padding: 0 3px;
+		&.right {
+			padding-right: calc(5vw + 20px);
+		}
+		&.left {
+			padding-left: calc(5vw + 20px);
+		}
+		.add {
+			color: green;
+			text-decoration: underline;
+			font-weight: bold;
+			padding: 0 3px;
+		}
+		.delete {
+			color: red;
+			text-decoration: line-through;
+			font-weight: bold;
+			padding: 0 3px;
+		}
+		&.full-width {
+			width:100%;
+			padding: 20;
+
+			@media screen and (min-width:$screen-med){
+				padding: 20 25%;
 			}
-			.delete {
-				color: red;
-				text-decoration: line-through;
-				font-weight: bold;
-				padding: 0 3px;
-			}
+		}
+		&.hidden {
+			display:none;
 		}
 	}
 

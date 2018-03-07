@@ -24,7 +24,6 @@ header#nav {
 }
 
 .header-container {
-  width: 90%;
   margin-right: auto;
   margin-left: auto;
   padding: 20px;
@@ -37,6 +36,12 @@ header#nav {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-container {
+    width: 90%;
+  }
 }
 
 .logo-box {
