@@ -121,16 +121,18 @@ header {
 		}
 		&.markup {
 			.add {
-				color: green;
+				color: rgb(33, 163, 33);
 				text-decoration: underline;
-				font-weight: bold;
+				font-weight: 500;
 				padding: 0 3px;
+				background-color: rgba(188, 255, 188, 0.5);
 			}
 			.delete {
 				color: red;
 				text-decoration: line-through;
-				font-weight: bold;
+				font-weight: 500;
 				padding: 0 3px;
+				background-color: rgba(255, 183, 183, 0.5);
 			}
 		}
 		&.after {

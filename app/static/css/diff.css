@@ -152,17 +152,19 @@ header#tools .header-container {
 }
 
 .section-content .item.markup .add {
-  color: green;
+  color: #21a321;
   text-decoration: underline;
-  font-weight: bold;
+  font-weight: 500;
   padding: 0 3px;
+  background-color: rgba(188, 255, 188, 0.5);
 }
 
 .section-content .item.markup .delete {
   color: red;
   text-decoration: line-through;
-  font-weight: bold;
+  font-weight: 500;
   padding: 0 3px;
+  background-color: rgba(255, 183, 183, 0.5);
 }
 
 .section-content .item.after .delete {
