@@ -241,7 +241,7 @@ $(document).ready(function() {
 						}
 					} else {
 						// error so red
-						$("#section").addClass("bad-form");;
+						$("#section").addClass("bad-form");
 
 						if (val.includes(" ")) {
 							errors.sectionErrors.spaceRange.status = true;
@@ -260,6 +260,14 @@ $(document).ready(function() {
 				});
 
 			});
+
+			// check if any section errors were thrown, if so, section not good
+			// this is how we ensure whitelisting
+			$.each(errors.sectionErrors, function (i, error) {
+				if (error.status) {
+					sectionGood = false;
+				}
+			})
 		}
 
 		// START YEAR INPUT VALIDATION
