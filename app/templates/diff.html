@@ -15,7 +15,7 @@
 		</div>
 		<div class="tool big-only" id="view-toggle">
 			<!-- toggle switch -->
-			<button type="button" id="pane-button" class="btn btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+			<button type="button" id="pane-button" class="btn btn-toggle" data-toggle="button" autocomplete="off">
 				<div class="handle"></div>
 			</button>
 		</div>
@@ -31,9 +31,9 @@
 				<span class="selection"></span>
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" data-display="markup">Show Markup</a>
-				<a class="dropdown-item" data-display="before" id="leftInitial">{{ startYear }} Version</a>
-				<a class="dropdown-item" data-display="after">{{ endYear }} Version</a>
+				<a class="dropdown-item" data-display="markup" id="leftMarkup">Show Markup</a>
+				<a class="dropdown-item" data-display="before" id="leftBefore">{{ startYear }} Version</a>
+				<a class="dropdown-item" data-display="after" id="leftAfter">{{ endYear }} Version</a>
 			</div>
 		</div>
 		<p>{{ title }} U.S.C. &sect; {{ each.section }}</p>
@@ -43,9 +43,9 @@
 					<span class="selection"></span>
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a class="dropdown-item" data-display="markup" id="rightInitial">Show Markup</a>
-					<a class="dropdown-item" data-display="before">{{ startYear }} Version</a>
-					<a class="dropdown-item" data-display="after">{{ endYear }} Version</a>
+					<a class="dropdown-item" data-display="markup" id="rightMarkup">Show Markup</a>
+					<a class="dropdown-item" data-display="before" id="rightBefore">{{ startYear }} Version</a>
+					<a class="dropdown-item" data-display="after" id="rightAfter">{{ endYear }} Version</a>
 				</div>
 			</div>
 	</div>

@@ -707,45 +707,62 @@ const screenMed = parseInt(__WEBPACK_IMPORTED_MODULE_0__css_header_constants_scs
 
 $(function () {
 
-	// this variable will control whether 2 panes are visible
-	var twoPanes = true;
-	// set default view based on current screen size
-	if ($(window).innerWidth() <= screenMed) {
-		twoPanes = false;
+	// we now use cookies! this checks if any have been set, and if not, sets them to our defaults
+	// cookies are used only for 2 pane display settings
+	if (!localStorage.getItem("twoPaneMem")) {
+		localStorage.setItem("twoPaneMem", true);
+	}
+	// the column display settings store the ID of the right button to click to get that setting
+	if (!localStorage.getItem("leftDisplay")) {
+		localStorage.setItem("leftDisplay", "#leftBefore");
+	}
+	if (!localStorage.getItem("rightDisplay")) {
+		localStorage.setItem("rightDisplay", "#rightMarkup");
 	}
 
 	// onclick, change dropdown display to current selection
 	$(".left .dropdown-menu a").click(function(){
-		changeClauseDisplay('.left', $(this));
+		localStorage.setItem("leftDisplay", "#" + $(this)[0]["id"]);
+		changeClauseDisplay('.left', $(localStorage.getItem("leftDisplay")));
 	});
 
 	$(".right .dropdown-menu a").click(function(){
-		changeClauseDisplay('.right', $(this));
+		localStorage.setItem("rightDisplay", "#" + $(this)[0]["id"]);
+		changeClauseDisplay('.right', $(localStorage.getItem("rightDisplay")));
 	});
 
-	// initialize with before on left and markup class on right
-	defaultTwoPaneView();
+	// initialize toggle display
+	setToggleDisplay();
 
-	// set proper screen display initially based on screen size
-	setPanes(twoPanes);
+	// initialize with saved column views
+	setTwoPaneView();
+
+	// set default view based on current screen size
+	if ($(window).innerWidth() <= screenMed) {
+		setPanes(false);
+	} else {
+		// if screen is big we use the cookie settings
+		setPanes(localStorage.getItem("twoPaneMem"));
+	}
 
 	// add an onclick function to the toggle button
 	$("#pane-button").click(function () {
-		twoPanes = !twoPanes;
-		setPanes(twoPanes);
+		localStorage.setItem("twoPaneMem", !JSON.parse(localStorage.getItem("twoPaneMem")));
+		setPanes(localStorage.getItem("twoPaneMem"));
 	});
 
 	// if screen suddenly gets small, make sure only one column is vis
 	$(window).resize(function() {
 		if ($(window).innerWidth() <= screenMed) {
-			twoPanes = false;
+			setPanes(false);
 		} else {
-			twoPanes = true;
-		}	
-		setPanes(twoPanes);
+			setPanes(localStorage.getItem("twoPaneMem"));
+		}
 	});
 
 	function setPanes(twoPanes) {
+		// it gets passed as a string from the cookie
+		twoPanes = JSON.parse(twoPanes);
 		// if only one pane visible do this
 		if (!twoPanes) {
 			// hide the right column in the section content
@@ -775,7 +792,8 @@ $(function () {
 				$(btn).addClass("two-pane-on");
 			})
 			// show proper display
-			defaultTwoPaneView();
+			setTwoPaneView();
+			setToggleDisplay();
 		}
 		reindent();
 	}
@@ -806,9 +824,20 @@ $(function () {
 		})
 	}
 	
-	function defaultTwoPaneView() {
-		$("#leftInitial").click();
-		$("#rightInitial").click();
+	function setTwoPaneView() {
+		$(localStorage.getItem("leftDisplay")).click();
+		$(localStorage.getItem("rightDisplay")).click();
+	}
+
+	// initialize toggle display based on whether twoPaneMem is on or not
+	function setToggleDisplay() {
+		if (JSON.parse(localStorage.getItem("twoPaneMem"))) {
+			$("#pane-button").addClass("active");
+			$("#pane-button").attr("aria-pressed", true);
+		} else {
+			$("#pane-button").removeClass("active");
+			$("#pane-button").attr("aria-pressed", false);
+		}
 	}
 });
 
