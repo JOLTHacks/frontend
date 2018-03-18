@@ -49,3 +49,7 @@ License: https://github.com/webpack-contrib/sass-loader/blob/master/LICENSE
 Popper.js
 
 License: https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md
+
+Cookie Consent
+
+License: https://cookieconsent.insites.com/documentation/license/
