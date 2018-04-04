@@ -36,7 +36,7 @@ def getTitle(title):
 	}
 	return result
 
-def getDiffs(section):
+def getDiffs(title, section, startDate, endDate):
 	result = { 
 		"structure": {
 			"name": "Title",
