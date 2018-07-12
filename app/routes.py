@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect
 from app import app
 from string import Template
-#import requests
+import requests
 import json
 from app import constants, api
 
@@ -23,19 +23,19 @@ def diff(title, section, startYear, endYear):
     frontendDiffs = []
     startDate = constants.dates[startYear]
     endDate = constants.dates[endYear]
-    for s in section.split('+'):
-        if not TESTING_ONE_SERVER_ONLY:
+    if not TESTING_ONE_SERVER_ONLY:
+        for s in section.split('+'):
             # todo parameterize url for requests, 
             # figure out how more complicated nested sections look coming in from the route
             #requests.request(method='get', url='http://127.0.0.1:5001/getDiffs', data=getDiffRequestStruct(title, s, startYear, endYear))
             #o = json.loads(r.text)
-           # diffs.append(generateDiffContent(r.text))
-            backendDiffs = api.getDiffs(title, section, startDate, endDate)
+            # diffs.append(generateDiffContent(r.text))
+            backendDiffs = api.getDiffs(title, s, startDate, endDate) # TODO: this will prob need to be changed
             backendDiffs = backendDiffs["structure"]
-        else:
-            backendDiffs = constants.dummy
-        content = generateSectionDiffContent(s, backendDiffs)
-        frontendDiffs.append(content)
+            content = generateSectionDiffContent(s, backendDiffs)
+            frontendDiffs.append(content)
+    else:
+        frontendDiffs = constants.dummy
     return render_template("diff.html", title=title, section=section, startYear=startYear, endYear=endYear, startDate=startDate, endDate=endDate, diffs=frontendDiffs)
 
 def getDiffRequestStruct(title, section, startYear, endYear):
